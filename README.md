@@ -1,6 +1,6 @@
 # colo_wintermute
-simple vim colorscheme
 
-Currently lives in `~/.vim/colors/`
-
-Combine w/`vim-markdown`
+- Simple Vim colorscheme
+- Place in `~/.vim/colors/`
+- Terminal only
+- Light/Dark
