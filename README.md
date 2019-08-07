@@ -4,6 +4,6 @@ _simple, terminal-only vim colorscheme._
 
 install:
 ```
-cd Desktop && curl https://raw.githubusercontent.com/jgplane/wintermute/master/wintermute.vim  \
+cd ~/.vim/colors && curl https://raw.githubusercontent.com/jgplane/wintermute/master/wintermute.vim  \
   --output wintermute.vim
  ```
