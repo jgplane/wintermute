@@ -1,6 +1,9 @@
-# colo_wintermute
+__wintermute__
 
-- Simple Vim colorscheme
-- Place in `~/.vim/colors/`
-- Terminal only
-- Light/Dark
+_simple, terminal-only vim colorscheme._
+
+install:
+```
+cd Desktop && curl https://raw.githubusercontent.com/jgplane/wintermute/master/wintermute.vim  \
+  --output wintermute.vim
+ ```
