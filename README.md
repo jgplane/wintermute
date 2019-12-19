@@ -1,8 +1,8 @@
 __wintermute__
 
-![palette](./img/palette.gif)
-
 _simple, terminal-only vim colorscheme._
+
+![palette](./img/palette.gif)
 
 install:
 ```
