@@ -37,11 +37,7 @@ endfor
 let s:red             = "160"
 let s:green           = "2"
 let s:blue            = "81"
-let s:blue_light      = "159"
-let s:blue_dark       = "39"
-let s:purple          = "93"
-let s:purple_light    = "99"
-let s:teal            = "80"
+let s:blue_dark       = "67"
 
 " NAMED VARIABLES
 if &background == "dark"
@@ -55,7 +51,7 @@ if &background == "dark"
   let s:primary         = s:blue
   let s:primary_alt     = s:blue_dark
   let s:accent          = s:gray_250
-  let s:visual          = "228"
+  let s:visual          = s:white
 else
   let s:bg              = s:gray_255
   let s:bg_alt          = s:white
@@ -64,10 +60,10 @@ else
   let s:norm_opposite   = s:white
   let s:norm_subtle     = s:gray_239
   let s:comment         = s:gray_247
-  let s:primary         = s:purple
-  let s:primary_alt     = s:purple_light
+  let s:primary         = "32"
+  let s:primary_alt     = "25"
   let s:accent          = s:gray_235
-  let s:visual          = s:teal
+  let s:visual          = s:black
 endif
 
 let s:success         = s:green
@@ -96,7 +92,7 @@ endif
 call s:h("Cursor",        {"bg": s:norm, "fg": s:norm_opposite})
 
 call s:h("Comment",       {"fg": s:comment})
-call s:h("Constant",      {"fg": s:primary})
+call s:h("Constant",      {"fg": s:norm})
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
@@ -114,13 +110,13 @@ hi! link Exception        Statement
 
 call s:h("Operator",      {"fg": s:norm, "cterm": "bold"})
 
-call s:h("PreProc",     {"fg": s:primary})
+call s:h("PreProc",     {"fg": s:norm_subtle})
 hi! link Include          PreProc
 hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h("Type",          {"fg": s:norm})
+call s:h("Type",          {"fg": s:primary})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
@@ -154,8 +150,8 @@ call s:h("IncSearch",     {"bg": s:primary, "fg": s:bg})
 call s:h("Search",        {"bg": s:primary, "fg": s:bg})
 call s:h("MoreMsg",       {"fg": s:norm_subtle, "cterm": "bold"})
 hi! link ModeMsg MoreMsg
-call s:h("LineNr",        {"fg": s:bg_subtle, "bg": s:bg_alt})
-call s:h("CursorLineNr",  {"fg": s:primary, "bg": s:bg_alt})
+call s:h("LineNr",        {"fg": s:bg_subtle, "bg": s:bg})
+call s:h("CursorLineNr",  {"fg": s:red, "bg": s:bg_alt})
 call s:h("Question",      {"fg": s:norm_subtle})
 call s:h("StatusLine",    {"bg": s:bg_alt})
 call s:h("StatusLineNC",  {"bg": s:bg_alt, "fg": s:bg_alt})
@@ -194,11 +190,16 @@ call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
 " RUBY
-call s:h("rubyClass",            {"fg": s:norm_subtle})
-call s:h("rubyDefine",           {"fg": s:norm_subtle})
+call s:h("rubyClass",            {"fg": s:primary_alt})
+call s:h("rubyClassName",        {"fg": s:primary})
+call s:h("rubyDefine",           {"fg": s:primary_alt})
+call s:h("rubyMethodName",       {"fg": s:primary})
+call s:h("rubyMethodBlock",      {"fg": s:norm})
 call s:h("rubyConditional",      {"fg": s:norm_subtle})
 call s:h("rubyInstanceVariable", {"fg": s:accent})
 call s:h("rubyString",           {"fg": s:norm})
+call s:h("rubyBlock",            {"fg": s:primary_alt})
+call s:h("rubyMacro",            {"fg": s:primary_alt})
 
 " MARKDOWN
 call s:h("VimwikiCode",    {"fg": s:norm_subtle})
