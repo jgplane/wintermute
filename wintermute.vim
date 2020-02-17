@@ -49,7 +49,7 @@ if &background == "dark"
   let s:norm_subtle     = s:gray_249
   let s:comment         = s:gray_242
   let s:primary         = s:blue
-  let s:primary_alt     = s:blue_dark
+  let s:secondary       = s:blue_dark
   let s:accent          = s:gray_250
   let s:visual          = s:white
 else
@@ -61,7 +61,7 @@ else
   let s:norm_subtle     = s:gray_239
   let s:comment         = s:gray_247
   let s:primary         = "32"
-  let s:primary_alt     = "25"
+  let s:secondary       = "25"
   let s:accent          = s:gray_235
   let s:visual          = s:black
 endif
@@ -198,27 +198,41 @@ call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
 " RUBY
-call s:h("rubyClass",            {"fg": s:primary_alt})
+call s:h("rubyClass",            {"fg": s:secondary})
 call s:h("rubyClassName",        {"fg": s:primary})
-call s:h("rubyDefine",           {"fg": s:primary_alt})
+call s:h("rubyDefine",           {"fg": s:secondary})
 call s:h("rubyMethodName",       {"fg": s:primary})
 call s:h("rubyMethodBlock",      {"fg": s:norm})
 call s:h("rubyConditional",      {"fg": s:norm_subtle})
 call s:h("rubyInstanceVariable", {"fg": s:accent})
 call s:h("rubyString",           {"fg": s:norm})
-call s:h("rubyBlock",            {"fg": s:primary_alt})
-call s:h("rubyMacro",            {"fg": s:primary_alt})
+call s:h("rubyBlock",            {"fg": s:secondary})
+call s:h("rubyMacro",            {"fg": s:secondary})
 
 " MARKDOWN
 call s:h("VimwikiCode",    {"fg": s:norm_subtle})
 call s:h("VimwikiPre",     {"fg": s:norm_subtle})
 
 " SNAP
-call s:h("SnapTitleNorm",      {"fg": s:norm_opposite, "bg": s:norm})
-call s:h("SnapTextTodo",       {"fg": s:norm_opposite, "bg": s:norm_subtle})
-call s:h("SnapTextDone",      {"fg": s:norm_opposite, "bg": s:bg_subtle})
+call s:h("SnapTitleNorm",  {"fg": s:norm_opposite, "bg": s:norm})
+call s:h("SnapTitleBang",  {"fg": s:norm_opposite, "bg": s:error})
+call s:h("SnapTextTodo",   {"fg": s:norm_opposite, "bg": s:norm_subtle})
+call s:h("SnapTextHead",   {"fg": s:norm_opposite, "bg": s:accent})
+call s:h("SnapEmphasis",   {"fg": s:norm_subtle})
+call s:h("SnapTextDone",   {"fg": s:norm_opposite, "bg": s:bg_subtle})
 hi! link SnapTextStart   SnapTextDone
 hi! link SnapTextTrail   SnapTextDone
-hi! link SnapTextHead    SnapTextDone
-call s:h("SnapTitleBang",      {"fg": s:norm_opposite, "bg": s:error})
 
+" TOPO
+call s:h("TopoTitle",      {"fg": s:primary})
+call s:h("TopoHeader",     {"fg": s:secondary})
+call s:h("TopoCode",       {"fg": s:norm_subtle})
+call s:h("TopoEmender",    {"fg": s:norm_subtle})
+call s:h("TopoEmphasis",   {"fg": s:norm_subtle})
+hi! link TopoComment  Comment
+
+" NAB
+call s:h("NabId",         {"fg": s:primary})
+call s:h("NabTitle",      {"fg": s:secondary})
+call s:h("NabSource",     {"fg": s:norm_subtle})
+call s:h("NabNote",       {"fg": s:norm_subtle})
